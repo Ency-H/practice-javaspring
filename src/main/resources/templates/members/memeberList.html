@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Member List</title>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <table>
+                <thead>
+                <tr>
+                   <th>#</th>
+                   <th>이름</th>
+                </tr>
+               </thead>
+                <tbody>
+                <!-- th:each는 thymeleaf 문법 -->
+                <tr th:each="member : ${members}">
+                    <td th:text="${memeber.id}"></td>
+                    <td th:text="${memeber.name"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</body>
+
+</html>
