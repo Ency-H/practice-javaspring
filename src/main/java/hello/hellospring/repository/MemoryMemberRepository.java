@@ -1,9 +1,12 @@
 package hello.hellospring.repository;
 
 import hello.hellospring.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
+//Repository 어노테이션은 외부I/O를 처리하기위한 객체를 스츠링컨테이너에 생성한다.
+//@Repository
 public class MemoryMemberRepository implements MemberRepository {
 
     private static Map<Long, Member> store = new HashMap<>(); //실무에서는 동시성 문제로 다르게 쓰임
@@ -31,7 +34,7 @@ public class MemoryMemberRepository implements MemberRepository {
         return new ArrayList<>(store.values()); //실무에선 List를 많이 씀
     }
 
-    //테스트 후 repository를 비움
+    //테스트 후 repository 메모리를 비우기 위함
     public void clearStore() {
         store.clear();
     }
